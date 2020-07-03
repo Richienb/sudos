@@ -1,14 +1,20 @@
 {
-	"name": "the-module",
+	"name": "sudos",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "The sudo command for Windows.",
+	"repository": "https://github.com/Richienb/sudos.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
-	"main": "index.js",
+	"bin": {
+		"sudo": "cli.js",
+		"sudos": "cli.js"
+	},
+	"main": "cli.js",
+	"os": [
+		"win32"
+	],
 	"files": [
-		"index.js",
-		"index.d.ts"
+		"cli.js"
 	],
 	"engines": {
 		"node": ">=10"
@@ -18,7 +24,10 @@
 		"test": "xo && ava"
 	},
 	"keywords": [],
-	"dependencies": {},
+	"dependencies": {
+		"pify": "^5.0.0",
+		"sudo-prompt": "^9.2.1"
+	},
 	"devDependencies": {
 		"ava": "^3.9.0",
 		"eslint-config-richienb": "^0.4.2",

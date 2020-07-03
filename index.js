@@ -1,9 +1,24 @@
+#!/usr/bin/env node
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") {
-		throw new TypeError(`Expected a string, got ${typeof input}`)
-	}
+const pify = require("pify")
+const sudo = pify(require("sudo-prompt").exec, {
+	multiArgs: true
+})
 
-	return `${input} & ${postfix}`
-}
+module.exports = (async () => {
+	try {
+		const [stdout, stderr] = await sudo(process.argv.slice(2).join(" "), {
+			name: "sudos"
+		})
+		if (stderr) {
+			process.stderr.write(stderr)
+		}
+		if (stdout) {
+			process.stdout.write(stdout)
+		}
+	} catch ([error]) {
+		process.stderr.write(error.message)
+		process.exitCode = error.code
+	}
+})()

@@ -1,41 +1,17 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# sudos [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/sudos/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/sudos)
 
-My awesome module.
+The sudo command for Windows.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/sudos.png)](https://npmjs.com/package/sudos)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install sudos --global
 ```
 
 ## Usage
 
-```js
-const theModule = require("the-module");
-
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+```sh
+sudos command
 ```
-
-## API
-
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
